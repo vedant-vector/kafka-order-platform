@@ -16,7 +16,7 @@ describe('AppService', () => {
     it('returns service health payload', () => {
       expect(service.getHealth()).toEqual({
         status: 'ok',
-        service: 'order-service',
+        service: 'inventory-service',
       });
     });
   });

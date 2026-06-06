@@ -1,22 +1,24 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-describe('AppService', () => {
-  let service: AppService;
+describe('AppController', () => {
+  let appController: AppController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
+      controllers: [AppController],
       providers: [AppService],
     }).compile();
 
-    service = app.get<AppService>(AppService);
+    appController = app.get<AppController>(AppController);
   });
 
   describe('getHealth', () => {
     it('returns service health payload', () => {
-      expect(service.getHealth()).toEqual({
+      expect(appController.getHealth()).toEqual({
         status: 'ok',
-        service: 'order-service',
+        service: 'notification-service',
       });
     });
   });

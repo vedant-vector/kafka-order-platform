@@ -1,5 +1,5 @@
 {
-  "name": "@event-driven-order-system/source",
+  "name": "@kafka-order-platform/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
