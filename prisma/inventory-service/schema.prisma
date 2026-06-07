@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../apps/inventory-service/src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Inventory {
+  id             String   @id @default(uuid())
+  productName    String   @unique @map("product_name")
+  availableStock Int      @map("available_stock")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@map("inventory")
+}

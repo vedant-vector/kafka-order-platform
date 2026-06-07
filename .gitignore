@@ -48,3 +48,11 @@ Thumbs.db
 
 # Local dev notes (not for version control)
 .local/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Prisma generated clients
+apps/**/src/generated/

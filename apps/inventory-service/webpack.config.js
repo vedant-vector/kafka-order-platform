@@ -9,6 +9,7 @@ module.exports = {
       devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     }),
   },
+  ignoreWarnings: [/generated\/prisma/],
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
