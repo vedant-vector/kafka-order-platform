@@ -45,3 +45,6 @@ Thumbs.db
 
 # Cursor
 .cursor/
+
+# Local dev notes (not for version control)
+.local/

@@ -2,6 +2,16 @@
 
 Nx monorepo for a Kafka-based order processing platform.
 
+## Layout
+
+```text
+apps/
+├── order-service/
+├── inventory-service/
+└── notification-service/
+libs/ (shared libraries at repo root: contracts, kafka, common)
+```
+
 ## Services
 
 | Service | Responsibility |

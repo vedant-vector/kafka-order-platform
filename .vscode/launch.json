@@ -33,7 +33,7 @@
       "skipFiles": ["<node_internals>/**"],
       "sourceMaps": true,
       "outFiles": [
-        "${workspaceFolder}/inventory-service/dist/**/*.(m|c|)js",
+        "${workspaceFolder}/apps/inventory-service/dist/**/*.(m|c|)js",
         "!**/node_modules/**"
       ]
     },
@@ -51,7 +51,7 @@
       "skipFiles": ["<node_internals>/**"],
       "sourceMaps": true,
       "outFiles": [
-        "${workspaceFolder}/notification-service/dist/**/*.(m|c|)js",
+        "${workspaceFolder}/apps/notification-service/dist/**/*.(m|c|)js",
         "!**/node_modules/**"
       ]
     }

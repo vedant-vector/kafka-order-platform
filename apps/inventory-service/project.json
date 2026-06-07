@@ -1,7 +1,7 @@
 {
-  "name": "notification-service",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "notification-service/src",
+  "name": "inventory-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/inventory-service/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -10,7 +10,7 @@
       "options": {
         "command": "webpack-cli build",
         "args": ["--node-env=production"],
-        "cwd": "notification-service"
+        "cwd": "apps/inventory-service"
       },
       "configurations": {
         "development": {
@@ -23,8 +23,8 @@
       "cache": true,
       "executor": "@nx/js:prune-lockfile",
       "outputs": [
-        "{workspaceRoot}/dist/notification-service/package.json",
-        "{workspaceRoot}/dist/notification-service/package-lock.json"
+        "{workspaceRoot}/dist/apps/inventory-service/package.json",
+        "{workspaceRoot}/dist/apps/inventory-service/package-lock.json"
       ],
       "options": {
         "buildTarget": "build"
@@ -34,7 +34,7 @@
       "dependsOn": ["build"],
       "cache": true,
       "outputs": [
-        "{workspaceRoot}/dist/notification-service/workspace_modules"
+        "{workspaceRoot}/dist/apps/inventory-service/workspace_modules"
       ],
       "executor": "@nx/js:copy-workspace-modules",
       "options": {
@@ -51,15 +51,15 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "notification-service:build",
+        "buildTarget": "inventory-service:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "notification-service:build:development"
+          "buildTarget": "inventory-service:build:development"
         },
         "production": {
-          "buildTarget": "notification-service:build:production"
+          "buildTarget": "inventory-service:build:production"
         }
       }
     },
