@@ -87,7 +87,18 @@ DATABASE_URL=postgresql://postgres:postgres@localhost:5432/inventory_db?schema=p
 KAFKA_BROKERS=localhost:9092 \
 npx nx serve inventory-service
 
+KAFKA_BROKERS=localhost:9092 \
 npx nx serve notification-service
+```
+
+### Notifications (`notification-service`)
+
+Consumes `order.created` and `inventory.updated` and logs friendly notification messages. No database — logger-only, ready to extend to email/SMS later.
+
+Health check:
+
+```sh
+curl http://localhost:3002/api/health
 ```
 
 ### Inventory API (`inventory-service`)
