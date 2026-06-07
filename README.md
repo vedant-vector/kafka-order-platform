@@ -72,12 +72,37 @@ curl http://localhost:3001/api/health
 
 ## Local development
 
-Run a service:
+Run order-service (needs PostgreSQL + Kafka for full flow):
 
 ```sh
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/order_db?schema=public \
+KAFKA_BROKERS=localhost:9092 \
 npx nx serve order-service
+```
+
+Run other services:
+
+```sh
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/inventory_db?schema=public \
 npx nx serve inventory-service
+
 npx nx serve notification-service
+```
+
+### Order API (`order-service`)
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/orders` | Create order and publish `order.created` |
+| GET | `/api/orders` | List all orders |
+| GET | `/api/orders/:id` | Get order by id |
+
+Example:
+
+```sh
+curl -X POST http://localhost:3000/api/orders \
+  -H "Content-Type: application/json" \
+  -d '{"productName":"Laptop","quantity":2}'
 ```
 
 Run tests:
