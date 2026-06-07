@@ -16,3 +16,10 @@ model Inventory {
 
   @@map("inventory")
 }
+
+model ProcessedOrder {
+  orderId     String   @id @map("order_id")
+  processedAt DateTime @default(now()) @map("processed_at")
+
+  @@map("processed_orders")
+}

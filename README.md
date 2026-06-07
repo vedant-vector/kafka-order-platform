@@ -84,9 +84,26 @@ Run other services:
 
 ```sh
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/inventory_db?schema=public \
+KAFKA_BROKERS=localhost:9092 \
 npx nx serve inventory-service
 
 npx nx serve notification-service
+```
+
+### Inventory API (`inventory-service`)
+
+Consumes `order.created`, decrements stock, and publishes `inventory.updated`. Duplicate events for the same `orderId` are skipped (idempotency guard).
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/inventory` | List all inventory records |
+| GET | `/api/inventory/:productName` | Get stock for a product |
+
+Example:
+
+```sh
+curl http://localhost:3001/api/inventory
+curl http://localhost:3001/api/inventory/Laptop
 ```
 
 ### Order API (`order-service`)
