@@ -24,6 +24,14 @@ libs/ (shared libraries at repo root: contracts, kafka, common)
 
 NestJS, Nx, Kafka, PostgreSQL, Prisma, Docker, GitHub Actions
 
+## Shared libraries
+
+| Library | Import alias | Purpose |
+|---|---|---|
+| `contracts` | `@kafka-order-platform/contracts` | Event names, topic constants, payload types |
+| `kafka` | `@kafka-order-platform/kafka` | Kafka client config, producer module, microservice helpers |
+| `common` | `@kafka-order-platform/common` | Validation pipe, global exception filter |
+
 ## Local development
 
 Run a service:

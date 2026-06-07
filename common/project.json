@@ -4,6 +4,14 @@
   "sourceRoot": "common/src",
   "projectType": "library",
   "tags": [],
-  "// targets": "to see all targets run: nx show project common --web",
-  "targets": {}
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/common"],
+      "options": {
+        "jestConfig": "common/jest.config.cts",
+        "passWithNoTests": true
+      }
+    }
+  }
 }
